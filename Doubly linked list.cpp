@@ -57,26 +57,20 @@ void reverse(Node *&head)
 
     while (temp->next != NULL)
     {
-        if (temp->next == NULL)
-        {
-            temp = temp->prev;
-            break;
-        }
-        else
-        {
-            temp = temp->next;
-        }
+       
+        temp = temp->next;
+        
     }
     cout << endl;
     cout << "reverse : ";
     Node *curr = temp;
-    while (count < 8)
+    while (curr->prev!=NULL)
     {
         cout << curr->data << " ";
         curr = curr->prev;
-        count++;
+        
     }
-
+    cout<<curr->data;
     cout << endl;
 }
 
@@ -121,6 +115,7 @@ void pop(Node *&head, int index)
     {
         Node *temp = head;
         Node *prev = head;
+        Node *forw = NULL;
 
         int count = 1;
         while (index > count)
@@ -129,8 +124,10 @@ void pop(Node *&head, int index)
             temp = temp->next;
             count++;
         }
+        forw = temp->next;
         temp->prev = NULL;
         prev->next = temp->next;
+        forw->prev = prev;
         temp->next = NULL;
         free(temp);
     }
@@ -166,9 +163,10 @@ int main()
     middle(head, 7, 7);
     middle(head, 8, 7);
     middle(head, 20, 5);
-    pop(head, 3);
-    pop(head, 11);
-    print(head);
-    length(head);
-    reverse(head);
+     print(head);
+//    pop(head, 5);
+   // pop(head, 11);
+//    print(head);
+   // length(head);
+   reverse(head);
 }

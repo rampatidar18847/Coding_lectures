@@ -116,9 +116,9 @@ int main()
 
     root = buildtree(root);
 
-    // levelordertravelsal(root);
+     levelordertravelsal(root);
 
-    inorder(root);
-    postorder(root);
-    preorder(root);
+//    inorder(root);
+//    postorder(root);
+//    preorder(root);
 }

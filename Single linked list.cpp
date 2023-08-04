@@ -143,6 +143,7 @@ int main()
     insertatmiddle(Head, 9, 5);
     insertatmiddle(Head, 10, 7);
     append(Head, 11);
+//    pop(Head,3);
     print(Head);
     length(Head);
     reverse(Head);

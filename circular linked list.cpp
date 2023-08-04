@@ -45,11 +45,13 @@ void pop(Node *tail, int element)
     {
         Node *prev = tail;
         Node *curr = prev->next;
+       
 
         while (curr->data != element)
         {
             prev = curr;
             curr = curr->next;
+           
         }
 
         prev->next = curr->next;
@@ -58,7 +60,9 @@ void pop(Node *tail, int element)
             tail = prev;
         }
         curr->next = NULL;
-        free(curr);
+        delete curr;
+        
+        
     }
 }
 
@@ -70,17 +74,27 @@ void print(Node *tail)
         cout << temp->data << " ";
         temp = temp->next;
     } while (temp != tail);
+    
+    cout<<endl;
 }
 
 int main()
 {
     Node *tail = NULL;
 
-    insert(tail, 0, 9);
+    insert(tail, 4, 9);
     insert(tail, 9, 7);
+    
     insert(tail, 7, 6);
-    insert(tail, 6, 67);
-    pop(tail, 9);
+    
+    insert(tail, 6, 13);
+    insert(tail,7,5);
+    insert(tail,13,14);
+    insert(tail,7,70);
+    insert(tail,6,60);
+    
+    print(tail);
+//    pop(tail, 9);
 
     print(tail);
 }
