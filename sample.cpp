@@ -1,33 +1,23 @@
-#include <iostream>
-#include <string>
-#include <vector>
+#include<bits/stdc++.h>
 using namespace std;
 
-int main() {
 
-    int count = 0;
-    bool isprime = true;
+int main()
+{
     
-    for (int i = 2; i <=10; i++)
-    {
-        isprime = true;
-        for (int j = 2; j <= i/2; j++)
-        {
-            if(i%j == 0)
-            {
-                isprime = false;
-            }
-        }
-        if (isprime)
-        {
-            cout<<i<<" is prime number"<<endl;
-            count++;
-        }
-        
+   int a[] = { 0, 1, 2, 3, 4, 5,9,4,6,3,5,2};
+   int n = sizeof(a) / sizeof(a[0]);
+   int k;
+   cin>>k;
 
-
-    }
-
-    cout<<count;
+   for (int i = 0; i < n-k+1; i++)
+   {
+     for (int j = 0; j < k; j++)
+     {
+        sum += a[i+j];
+     }
+     
+   }
+   
     
 }
